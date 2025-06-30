@@ -536,16 +536,7 @@ export default function VideoMeetComponent() {
                       socketId={video.socketId}
                     />
                   ))}
-                  <div className="peers_video_container"></div>
-                  <div className="peers_video_container"></div>
-                  <div className="peers_video_container"></div>
-                  <div className="peers_video_container"></div>
-                  <div className="peers_video_container"></div>
-                  <div className="peers_video_container"></div>
-                  <div className="peers_video_container"></div>
-                  <div className="peers_video_container"></div>
-                  <div className="peers_video_container"></div>
-                  <div className="peers_video_container"></div>
+              
 
                 </div>
               </div>
