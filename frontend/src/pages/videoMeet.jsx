@@ -451,8 +451,9 @@ export default function VideoMeetComponent() {
   };
 
 
-  let sendMessage = () => {
+  let sendMessage = (e) => {
     // console.log(socket.current);
+    e.preventDefault()
     socket.current.emit("chat-message", message, username);
     setMessage("");
 
@@ -516,23 +517,39 @@ export default function VideoMeetComponent() {
       ) : (
         <div className="meetVideoContainer">
           <div className="conference_container">
-            <div className="conferenceView">
-              <video
-                className="meetUserVideo"
-                ref={localVideoRef}
-                autoPlay
-                muted
-              ></video>
+            <div className="conferenceView ">
+              
+                <video
+                 className="meetUserVideo"
+                  ref={localVideoRef}
+                  autoPlay
+                  muted
+                ></video>
+             
 
-              {videos.map((video) => (
-                <VideoStream
-                  key={video.socketId}
-                  stream={video.stream}
-                  socketId={video.socketId}
-                />
-              ))}
+              <div className="otherSide">
+                <div className="otherSideVideo">
+                  {videos.map((video) => (
+                    <VideoStream
+                      key={video.socketId}
+                      stream={video.stream}
+                      socketId={video.socketId}
+                    />
+                  ))}
+                  <div className="peers_video_container"></div>
+                  <div className="peers_video_container"></div>
+                  <div className="peers_video_container"></div>
+                  <div className="peers_video_container"></div>
+                  <div className="peers_video_container"></div>
+                  <div className="peers_video_container"></div>
+                  <div className="peers_video_container"></div>
+                  <div className="peers_video_container"></div>
+                  <div className="peers_video_container"></div>
+                  <div className="peers_video_container"></div>
+
+                </div>
+              </div>
             </div>
-
             {showModal && (
               <div className="chatRoom">
                 <h1 className="chat_title">Chat</h1>

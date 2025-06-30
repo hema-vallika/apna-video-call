@@ -67,8 +67,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-inline: 20px;
+  padding-inline: 2px;
+  background:linear-gradient(90deg,#2196F3,#673AB7);
   text-align: center;
+  color: white;
+  /* position: sticky; */
 }
 .meetContainer {
   margin-top: 4rem;
@@ -159,13 +162,23 @@
   flex-wrap: wrap;
   gap: 1.5rem;
 }
+.peers_video_container{
+  break-inside: avoid;
+   width: 30vw;
+  height: 40vh;
+  min-width: 30vw;
+  border-radius: 10px;
+  object-fit: cover;
+  background-color: #d97500;
 
+}        
 .peers_video_container video {
   width: 30vw;
   height: 40vh;
   min-width: 30vw;
   border-radius: 10px;
   object-fit: cover;
+
 }
 .meetUserVideo {
   position: absolute;
@@ -175,8 +188,15 @@
   bottom: 20px;
   border-radius: 15px;
   /* align-self: flex-end; */
-  border: 2px solid black;
+  border: 3px solid rgba(128, 13, 205, 0.951);
+  /* z-index:2 */
 }
+/* .meetUserVideo video{
+  height: 250px;
+  width: 250px;
+  object-fit: cover;
+} */
+
 
 .chatRoom {
   background: white;
@@ -195,11 +215,12 @@
   padding: 10px;
 }
 
-.chattingArea {
+.chattingArea form{
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.5rem;
+  padding: 0px 5px;
 }
 
 .buttonContainers {
@@ -218,6 +239,75 @@
   font-size: 1rem;
   text-align: center;
   color: white;
+
+}
+
+.otherSide{
+   width: 100%;
+  height: 100%;
+  padding: 8px;
+  overflow-x: auto; 
+}
+
+.otherSideVideo{
+  width: 100%;
+  height: 90vh;
+  display: grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap: 15px;
+}
+
+
+
+/* medium devices */
+@media (max-width: 769px){
+  .landingMainContainer .main_right{
+    display: none;
+  }
+  .navlist p{
+    font-size: 25px;
+  }
+  .main_left{
+    padding-top: 8rem;
+  }
+  .main_left p{
+    padding-top: 3rem;
+    font-size: xx-large;
+  }
+  .getStartedButton{
+    padding: 1.5rem 4.5rem;
+    margin-top: 3.5rem;
+    text-align: center;
+    font-weight: 400;
+    font-size: 2.5rem;
+  }
+  .home-container{
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+
+  }
+  .chatRoom {
+  background: white;
+  border-radius: 20px;
+  width: 40vw;
+  height: 60vh;
+  position: absolute;
+  bottom: 0;
+  right:0;
+  display: grid;
+  grid-template-rows: 50px auto 60px;
+}
+ .peers_video_container  {
+    width: 100%;
+  }
+  .peers_video_container video {
+    width: 100%;
+  }
+.otherSideVideo{
+    grid-template-columns: 1fr 1fr;
+  }
 
 }
 
@@ -301,32 +391,23 @@
   }
   .chatRoom{
     position: absolute;
-    width: 90%;
+    width: 80%;
   }
   .meetUserVideo {
     height: 200px;
   }
+  .peers_video_container  {
+    width: 100%;
+  }
   .peers_video_container video {
     width: 100%;
   }
+
+  .otherSideVideo{
+    
+    grid-template-columns: 1fr;
+  }
 }
 
-/* Small devices (tablets, 576px - 768px) */
-@media (min-width: 576px) and (max-width: 768px) {
-  /* CSS styles */
-}
 
-/* Medium devices (laptops, 768px - 992px) */
-@media (min-width: 768px) and (max-width: 992px) {
-  /* CSS styles */
-}
 
-/* Large devices (desktops, 992px - 1200px) */
-@media (min-width: 992px) and (max-width: 1200px) {
-  /* CSS styles */
-}
-
-/* Extra large devices (large desktops, 1200px and above) */
-@media (min-width: 1200px) {
-  /* CSS styles */
-}

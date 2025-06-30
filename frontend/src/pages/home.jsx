@@ -21,7 +21,7 @@ function HomeComponent() {
     <>
       <div
         className="navbar"
-        style={{ padding: "20px", backgroundColor: "#B8B8B8" }}
+        style={{ padding: "20px" }}
       >
         <div style={{ display: "flex", alignItems: "center" }}>
           <h2>Apna Video Call</h2>
