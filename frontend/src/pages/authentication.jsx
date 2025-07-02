@@ -30,7 +30,7 @@ export default function Authentication() {
 
   const [open, setOpen] = React.useState(false);
 
-  const { handleRegister, handleLogin } = React.useContext(AuthContext);
+  const {handleRegister,handleLogin} = React.useContext(AuthContext);
 
   let handleAuth = async () => {
     console.log("welcome", { username, password, name });
