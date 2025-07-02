@@ -38,6 +38,8 @@ export default function Authentication() {
     try {
       if (formState === 0) {
         let result = await handleLogin(username, password);
+        console.log("Lofin Successful",result);
+        
       }
       if (formState === 1) {
         let result = await handleRegister(name, username, password);
@@ -51,7 +53,14 @@ export default function Authentication() {
       }
     } catch (err) {
       console.log(err);
-      let message = err.response.data.message;
+      let message = "Something went wrong. Please try again.";
+      
+      if (err.response && err.response.data && err.response.data.message) {
+        message = err.response.data.message;
+      } else if (err.message === "Network Error") {
+        message = "Server is not reachable. Please wait or check your internet.";
+      }
+
       setError(message);
     }
   };
