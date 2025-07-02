@@ -5,9 +5,7 @@ import httpStatus from "http-status";
 
 export const AuthContext = createContext({});
 const client = axios.create({
-  baseURL: import.meta.env.MODE === "development"
-    ? "http://localhost:8000/api/v1/users"
-    : "https://apna-video-call-server.onrender.com"
+  baseURL:  "https://apna-video-call-server.onrender.com"
 });
 
 export const AuthProvider = ({children}) => {
